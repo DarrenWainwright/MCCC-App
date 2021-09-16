@@ -1,0 +1,67 @@
+.door-button {
+    display: block;
+    background-color: #f7f7f7;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#e7e7e7));
+    background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7);
+    background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7);
+    background-image: -ms-linear-gradient(top, hsl(0, 0%, 97%), #e7e7e7);
+    background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7);
+    color: #a7a7a7;
+    margin: 36px;
+    width: 400px;
+    height: 400px;
+    position: relative;
+    text-align: center;
+    line-height: 400px;
+    border-radius: 50%;
+    box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+}
+
+
+/* well around the button */
+
+.door-button:before {
+    content: "";
+    display: block;
+    background: #fff;
+    border-top: 2px solid #ddd;
+    position: absolute;
+    top: -18px;
+    left: -18px;
+    bottom: -18px;
+    right: -18px;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.door-button:hover {
+    text-decoration: none;
+}
+
+.door-open {
+    background: rgb(7, 95, 7);
+    color: hsl(0, 0%, 97%);
+}
+
+.door-open:before {
+    box-shadow: inset 0px 8px 48px rgb(155, 173, 151);
+}
+
+.door-open:hover {
+    color: rgb(212, 211, 211);
+    background: rgb(5, 65, 5);
+}
+
+.door-close {
+    background: rgb(158, 11, 11);
+    color: hsl(0, 0%, 97%);
+}
+
+.door-close:before {
+    box-shadow: inset 0px 8px 48px rgb(173, 151, 151);
+}
+
+.door-close:hover {
+    background: rgb(102, 7, 7);
+    color: rgb(212, 211, 211);
+}

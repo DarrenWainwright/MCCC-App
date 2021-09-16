@@ -1,0 +1,27 @@
+@using MCCC_App.Data
+@inject IIOTHub iotHubService
+
+<div>
+    <a href="#" class="door-button @(IsOpen ? "door-close" : "door-open")" @onclick:preventDefault="true"
+        @onclick="ToggleDoor">
+    </a>
+</div>
+
+@code {
+    private bool IsOpen { get; set; } = false;
+
+    [Parameter]
+    public string CurrentState
+    {
+        get { return IsOpen ? "Open" : "Closed";} 
+        set { IsOpen = value == "Open";} 
+    }
+
+    private async Task ToggleDoor()
+    {
+        var toggleTo = IsOpen ? "close" : "open";
+        Console.WriteLine(toggleTo);
+        await iotHubService.ToggleDoor("MCCC", toggleTo);
+        IsOpen = !IsOpen;
+    }
+}
